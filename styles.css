@@ -334,7 +334,8 @@ a:hover {
 } 
 
 .main-image {
-  width: 1000px;
+  max-width: 100%; 
+  height: auto;
 }
 
 .main-image-box {
@@ -342,17 +343,115 @@ a:hover {
   justify-content: center;
 }
 
+@media (max-width: 400px) {
+  .main-image-box {
+    display: none;
+  }
+}
+
+/* Some points for the main part of the template */
 
 /* center-container */
 .center-container {
   display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  /* Font-family for everything within main */
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: normal;
-  
+  min-height: 100vh;
 }
+
+/* tables inside the main */
+main.container.center-container table {
+  border-collapse: separate; 
+  border-spacing: 5px; 
+  width: 100%; 
+}
+
+main.container.center-container table td {
+  padding-right: 10px; 
+}
+
+main.container.center-container table ul {
+  list-style-type: none; 
+  padding: 0; 
+}
+
+main.container.center-container table li {
+  margin-bottom: 10px; 
+}
+
+/* titles and texts inside of main */ 
+/* normal text / smallest text is already in the center-container */
+main.container.center-container h1 {
+  /* for largest titles / other largest texts you might need */
+  font-size: 21px; 
+  font-weight: normal; 
+}
+
+main.container.center-container h2 {
+  /* for secondary titles / other second largests texts you might need */
+  font-size: 19px; 
+  font-weight: normal; 
+}
+
+/* spaces within the main between each element by default, change if it doesn't suit a situation with your own page but keep for most cases? */
+main.container.center-container > * {
+  margin-bottom: 30px; 
+}
+
+/* points for main part for bigger screens */
+
+@media (min-width: 401px) {
+
+/* tables inside the main */
+main.container.center-container table {
+  border-collapse: separate; 
+  border-spacing: 10px; 
+  width: 100%; 
+}
+
+main.container.center-container table td {
+  padding-right: 15px; 
+}
+
+main.container.center-container table ul {
+  list-style-type: none; 
+  padding: 0; 
+}
+
+main.container.center-container table li {
+  margin-bottom: 10px; 
+}
+
+/* titles and texts inside of main */ 
+/* normal text / smallest text is already in the center-container */
+main.container.center-container h1 {
+  /* for largest titles / other largest texts you might need */
+  font-size: 25px; 
+  font-weight: normal; 
+}
+
+main.container.center-container h2 {
+  /* for secondary titles / other second largests texts you might need */
+  font-size: 20px; 
+  font-weight: normal; 
+}
+
+/* spaces within the main between each element by default, change if it doesn't suit a situation with your own page but keep for most cases? */
+main.container.center-container > * {
+  margin-bottom: 30px; 
+}
+
+}
+
 
 /* image under slideshow */
 .rounded-circle {
@@ -472,3 +571,9 @@ a:hover {
     .text-dark-gray a {
       color: #ccc;
     }
+
+    /* for comment page */
+
+    /* .comment-image {
+      min-contrast-ratio:   4.5 !default;
+    } */
